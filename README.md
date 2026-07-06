@@ -15,18 +15,18 @@ Simple and reliable way to run Xray VPN on Linux without Hiddify or GUI clients.
 ---
 
 Установка Xray:
-bash <(curl -Ls https://github.com/XTLS/Xray-install/raw/main/install-release.sh)
+curl -Ls https://github.com/XTLS/Xray-install/raw/main/install-release.sh
 
 Настройка.
 
-Файл:
-/usr/local/etc/xray/config.json
+Файл config.json:
+/usr/local/etc/xray/config.json .
 Вставьте конфиг из вашей подписки (VLESS / VMess и т.д.)
 
 Запуск:
 sudo systemctl enable --now xray
 
-Redsocks:
+Redsocks (файл конфига redsocks.conf):
 sudo apt install redsocks
 или
 sudo pacman -S redsocks
@@ -34,11 +34,11 @@ sudo pacman -S redsocks
 Быстрое включение VPN.
 Создать файл:
 nano ~/vpn-on.sh
-(вставьте содержимое из инструкции)
+(вставьте содержимое из vpn-on.sh)
 
 Выключение VPN:
 nano ~/vpn-off.sh
-(вставьте содержимое из инструкции)
+(вставьте содержимое из vpn-off.sh)
 
 Права:
 chmod +x ~/vpn-on.sh ~/vpn-off.sh
@@ -53,7 +53,7 @@ curl https://api.ipify.org
 Примечания:
 - UDP требует дополнительной настройки (TPROXY)
 - IPv6 рекомендуется отключить
-- Подписка обновляется вручную или через скрипт
+- Подписка обновляется вручную или через скрипт xray-update.sh
 
 ===================================================================================
 
@@ -68,27 +68,27 @@ Features
 ---
 
 Install Xray:
-bash <(curl -Ls https://github.com/XTLS/Xray-install/raw/main/install-release.sh)
+curl -Ls https://github.com/XTLS/Xray-install/raw/main/install-release.sh
 
 Configuration.
-File:
-/usr/local/etc/xray/config.json
+File config.json:
+/usr/local/etc/xray/config.json .
 Insert your subscription config (VLESS / VMess etc.)
 
 Start:
 sudo systemctl enable --now xray
 
-Redsocks:
+Redsocks (config file redsocks.conf:
 sudo apt install redsocks
 or
 sudo pacman -S redsocks
 
 Quick VPN ON.
 
-Create:
+Create (or copy file vpn-on.sh:
 nano ~/vpn-on.sh
 
-Quick VPN OFF:
+Quick VPN OFF (file vpn-off.sh):
 nano ~/vpn-off.sh
 
 Make executable:
@@ -104,4 +104,4 @@ curl https://api.ipify.org
 Notes
 - TCP only (UDP requires extra setup)
 - IPv6 should be disabled
-- Config can be auto-updated via subscription script
+- Config can be auto-updated via subscription script xray-update.sh
